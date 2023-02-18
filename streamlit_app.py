@@ -8,6 +8,7 @@ st.set_page_config(page_title="Calculadora Matemática")
 
 st.title("Calculadora Matemática")
 
+# Sección para resolver ecuaciones
 st.header("Resolución de ecuaciones")
 equation_key = 'equation' + str(np.random.randint(1000))
 equation = st.text_input("Introduce una ecuación:", key=equation_key)
@@ -17,6 +18,7 @@ try:
 except:
     pass
 
+# Sección para realizar cálculos numéricos
 st.header("Cálculos numéricos")
 number_key = 'number' + str(np.random.randint(1000))
 number = st.number_input("Introduce un número:", value=0.0, key=number_key)
@@ -28,6 +30,7 @@ if st.button("Integrar x^2 de 0 a 1"):
     result, _ = quad(lambda x: x**2, 0, 1)
     st.write(f"La integral de x^2 de 0 a 1 es {result}")
 
+# Sección para realizar cálculos simbólicos
 st.header("Cálculos simbólicos")
 symbol_key = 'symbol' + str(np.random.randint(1000))
 x, y = symbols('x y')
@@ -36,6 +39,7 @@ if st.button("Simplificar"):
     expression = simplify(equation)
     st.write(f"La expresión simplificada es {expression}")
 
+# Sección para realizar gráficos
 st.header("Gráficos")
 function_key = 'function' + str(np.random.randint(1000))
 function = st.text_input("Introduce una función:", key=function_key)
